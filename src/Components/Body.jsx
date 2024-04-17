@@ -71,15 +71,15 @@ function Body() {
       {/* <h2 className="grid grid-row-1 text-3xl font-bold mb-8  justify-center border rounded-xl bg-blue-200 py-5 w-full">Courses</h2> */}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-10" >
-  <div className="bg-white rounded-lg shadow-md overflow-hidden">
-    <img src="/images/logo.png" alt="Course 1" className="h-40"/>
+  <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl hover:shadow-slate-500">
+    <img src="/images/logo.png" alt="Course 1" className="h-40  "/>
     <div className="p-6">
       <h3 className="text-xl font-bold mb-2">Course 1</h3>
       <p className="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       <a href="#" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Learn More</a>
     </div>
   </div>
-  <div className="bg-white rounded-lg shadow-md overflow-hidden">
+  <div className="bg-white rounded-lg shadow-md overflow-hidden  hover:shadow-xl hover:shadow-slate-500">
     <img src="/images/logo.png" alt="Course 2" className="h-40"/>
     <div className="p-6">
       <h3 className="text-xl font-bold mb-2">Course 2</h3>
@@ -87,7 +87,7 @@ function Body() {
       <a href="#" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Learn More</a>
     </div>
   </div>
-  <div className="bg-white rounded-lg shadow-md overflow-hidden">
+  <div className="bg-white rounded-lg shadow-md overflow-hidden  hover:shadow-xl hover:shadow-slate-500">
     <img src="/images/logo.png" alt="Course 3" className="h-40"/>
     <div className="p-6">
       <h3 className="text-xl font-bold mb-2">Course 3</h3>
@@ -95,7 +95,7 @@ function Body() {
       <a href="#" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Learn More</a>
     </div>
   </div>
-  <div className="bg-white rounded-lg shadow-md overflow-hidden">
+  <div className="bg-white rounded-lg shadow-md overflow-hidden  hover:shadow-xl hover:shadow-slate-500">
     <img src="/images/logo.png" alt="Course 4" className="h-40"/>
     <div className="p-6">
       <h3 className="text-xl font-bold mb-2">Course 4</h3>
@@ -111,7 +111,7 @@ function Body() {
         <h2 className=" text-3xl font-bold mb-8 flex justify-center border rounded-xl bg-blue-200 py-5 ">Our Results</h2>
           <h2 className=" text-3xl font-bold mb-8 flex justify-center border rounded-xl bg-blue-200 py-5 w-80 mx-auto">Academic Results</h2>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="bg-white rounded-lg shadow-md overflow-hidden  hover:shadow-xl hover:shadow-slate-500">
         <div className="p-6">
           <img src="/images/logo.png" alt="Course 3" className="h-40"/>
           <h3 className="text-xl font-bold mb-2">100% Placement</h3>
@@ -120,7 +120,7 @@ function Body() {
           </p>
         </div>
       </div>
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="bg-white rounded-lg shadow-md overflow-hidden  hover:shadow-xl hover:shadow-slate-500">
         <div className="p-6">
           <img src="/images/logo.png" alt="Course 3" className="h-40"/>
           <h3 className="text-xl font-bold mb-2">Average Salary</h3>
@@ -129,7 +129,7 @@ function Body() {
           </p>
         </div>
       </div>
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="bg-white rounded-lg shadow-md overflow-hidden  hover:shadow-xl hover:shadow-slate-500">
         <div className="p-6">
           <img src="/images/logo.png" alt="Course 3" className="h-40"/>
           <h3 className="text-xl font-bold mb-2">Satisfied Students</h3>
@@ -146,7 +146,7 @@ function Body() {
 <div className="mt-40">
   <div className="container mx-auto">
   <h2 className=" text-3xl font-bold mb-8 flex justify-center border rounded-xl bg-blue-200 py-5 w-80 mx-auto">Unit Test</h2>    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="bg-white rounded-lg shadow-md overflow-hidden  hover:shadow-xl hover:shadow-slate-500">
         <div className="p-6">
           <img src="/images/logo.png" alt="Course 3" className="h-40"/>
           <h3 className="text-xl font-bold mb-2">100% Pass Rate</h3>
@@ -155,7 +155,7 @@ function Body() {
           </p>
         </div>
       </div>
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="bg-white rounded-lg shadow-md overflow-hidden  hover:shadow-xl hover:shadow-slate-500">
         <div className="p-6">
           <img src="/images/logo.png" alt="Course 3" className="h-40"/>
           <h3 className="text-xl font-bold mb-2">Comprehensive Coverage</h3>
@@ -164,7 +164,7 @@ function Body() {
           </p>
         </div>
       </div>
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="bg-white rounded-lg shadow-md overflow-hidden  hover:shadow-xl hover:shadow-slate-500">
         <div className="p-6">
           <img src="/images/logo.png" alt="Course 3" className="h-40"/>
           <h3 className="text-xl font-bold mb-2">Immediate Feedback</h3>
@@ -181,7 +181,7 @@ function Body() {
         <div className="container mx-auto" id="testimonials">
           <h2 className=" text-3xl font-bold mb-8 flex justify-center border rounded-xl bg-blue-200 py-5">Testimonials</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="bg-white rounded-lg shadow-md overflow-hidden  hover:shadow-xl hover:shadow-slate-500">
         <div className="p-6">
           <img src="images/logo.png" alt="" className="h-40"/>
           <p className="text-gray-600 mb-4">
@@ -192,7 +192,7 @@ function Body() {
           <p className="text-gray-600">Software Engineer</p>
         </div>
       </div>
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="bg-white rounded-lg shadow-md overflow-hidden  hover:shadow-xl hover:shadow-slate-500">
         <div className="p-6">
         <img src="images/logo.png" alt="" className="h-40"/>
           <p className="text-gray-600 mb-4">
@@ -203,7 +203,7 @@ function Body() {
           <p className="text-gray-600">Data Analyst</p>
         </div>
       </div>
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="bg-white rounded-lg shadow-md overflow-hidden  hover:shadow-xl hover:shadow-slate-500">
         <div className="p-6">
         <img src="images/logo.png" alt="" className="h-40"/>
           <p className="text-gray-600 mb-4">
