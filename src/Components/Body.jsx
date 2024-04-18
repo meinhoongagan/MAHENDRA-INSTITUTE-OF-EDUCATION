@@ -12,7 +12,7 @@ function Body() {
 
         </div>
      { /* Home section Starting */}
-     <div className="flex-col absolute top-40 left-40 bg-gradient-to-r from-cyan-200 to-blue-200 py-10 px-20 rounded-xl w-1/2 hover:shadow-xl hover:shadow-gray-300 max-md:w-full max-md:left-0 max-md:px-5 lg:absolute lg:left-20" >
+     <div className="flex-col absolute top-40 left-40 bg-gradient-to-r from-cyan-200 to-blue-200 py-10 px-20 rounded-xl w-1/2 hover:shadow-xl hover:shadow-gray-300 max-md:w-full max-md:left-0 max-md:px-5 lg:absolute lg:left-20 max-lg:absolute max-lg:left-60 overflow-auto h-2/3" >
           <h1 className="font-bold text-2xl">lorem ipsum jsdbva ajbn</h1>
           <p className="">
           lorem ipsum qlnf x;oiainc na; uuhc kjhflkjb ciulkjc jhkjb lorem ipsum
@@ -28,22 +28,15 @@ function Body() {
           uuhc kjhflkjb ciulkjc jhkjb
          iulkjc jhkjb lorem ipsum qlnf x;oiainc na;
           uuhc kjhflkjb ciulkjc jhkjb
-     
-         iulkjc jhkjb lorem ipsum qlnf x;oiainc na;
          uuhc kjhflkjb ciulkjc jhkjb lorem ipsum qlnf x;oiainc na;
           uuhc kjhflkjb ciulkjc jhkjb
          iulkjc jhkjb lorem ipsum qlnf x;oiainc na;
           uuhc kjhflkjb ciulkjc jhkjb
-         iulkjc jhkjb lorem ipsum qlnf x;oiainc na;
          uuhc kjhflkjb ciulkjc jhkjb lorem ipsum qlnf x;oiainc na;
           uuhc kjhflkjb ciulkjc jhkjb
          iulkjc jhkjb lorem ipsum qlnf x;oiainc na;
           uuhc kjhflkjb ciulkjc jhkjb
-         iulkjc jhkjb lorem ipsum qlnf x;oiainc na;
-         uuhc kjhflkjb ciulkjc jhkjb lorem ipsum qlnf x;oiainc na;
-          uuhc kjhflkjb ciulkjc jhkjb
-         iulkjc jhkjb lorem ipsum qlnf x;oiainc na;
-          uuhc kjhflkjb ciulkjc jhkjb
+
      
  
           
@@ -53,7 +46,7 @@ function Body() {
           <img
             src="/images/logo.png"
             alt=""
-            className="max-md:hidden shadow-xl shadow-gray-400 absolute top-0 right-40 lg:absolute lg:right-0"
+            className="max-md:hidden shadow-xl shadow-gray-400 absolute top-0 right-40 lg:absolute lg:right-0  max-lg:absolute max-lg:hidden"
           />
           <img
             src="/images/pexels-max-fischer-5212329.jpg"
@@ -71,7 +64,7 @@ function Body() {
       {/* <h2 className="grid grid-row-1 text-3xl font-bold mb-8  justify-center border rounded-xl bg-blue-200 py-5 w-full">Courses</h2> */}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-10" >
-  <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl hover:shadow-slate-500">
+  <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl hover:shadow-slate-500 1">
     <img src="/images/logo.png" alt="Course 1" className="h-40  "/>
     <div className="p-6">
       <h3 className="text-xl font-bold mb-2">Course 1</h3>
@@ -217,8 +210,65 @@ function Body() {
     </div>
         </div>
       </div>
-      
-    </div>
+       {/* Payment Section */}
+       <div className="mt-40 mb-20 bg-gradient-to-r from-cyan-200 to-blue-200 py-10 px-20 rounded-xl" id="payment">
+          <h2 className="text-3xl font-bold mb-8 flex justify-center">Payment Options</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* QR Code */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden  p-6">
+              <img src="/images/qr-code.png" alt="QR Code" className="h-40 mx-auto" />
+              <h3 className="text-xl font-bold mb-2">Scan QR Code</h3>
+              <p className="text-gray-600 mb-4">
+                Scan the QR code to make a payment.
+              </p>
+            </div>
+            {/* UPI ID */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden  p-6">
+              <img src="/images/upi-logo.png" alt="UPI Logo" className="h-40 mx-auto" />
+              <h3 className="text-xl font-bold mb-2">UPI ID</h3>
+              <p className="text-gray-600 mb-4">
+                You can also make a payment using your UPI ID.
+              </p>
+              <p className="text-gray-600 mb-4">UPI ID: yourname@upi</p>
+            </div>
+            {/* Banking Details */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden  p-6">
+              <img src="/images/banking.png" alt="Banking" className="h-40 mx-auto" />
+              <h3 className="text-xl font-bold mb-2">Banking Details</h3>
+              <p className="text-gray-600 mb-4">
+                You can also make a payment through bank transfer.
+              </p>
+              <p className="text-gray-600 mb-4">
+                Account Number: 12345678
+                <br />
+                IFSC Code: ABCD1234
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Contact Section */}
+        <div className="mt-40 mb-20 bg-gradient-to-r from-cyan-200 to-blue-200 py-10 px-20 rounded-xl" id="contact">
+          <h2 className="text-3xl font-bold mb-8 flex justify-center">Contact Us</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden  p-6">
+              <h3 className="text-xl font-bold mb-2">Address</h3>
+              <p className="text-gray-600 mb-4">
+                123 Main Street
+                <br />
+                Anytown, USA 12345
+              </p>
+            </div>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden p-6">
+              <h3 className="text-xl font-bold mb-2">Email</h3>
+              <p className="text-gray-600 mb-4">
+                info@example.com
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+   
     
   );
 }
