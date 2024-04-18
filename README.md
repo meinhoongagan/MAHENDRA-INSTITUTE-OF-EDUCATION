@@ -17,6 +17,8 @@ Welcome to the official website of Mahendra Institute! We are dedicated to provi
 
 ## Contributions
 We welcome contributions from anyone who can add value to our website. If you have suggestions for improvements, new features, or bug fixes, please feel free to submit a pull request. Contributors who add significant value to the project may be eligible for monetary compensation.
+## How to Run Server 
+Use ( npm run dev ) in terminal to get local host Link.
 
 ## Contact Us
 If you have any questions, feedback, or issues, please don't hesitate to contact us:
