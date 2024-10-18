@@ -1,19 +1,19 @@
-import Nav from "./Components/Nav";
-import Body from "./Components/Body";
+import Nav from "./pages/Nav";
+import Body from "./pages/Body";
 // import Courses from "./Components/Courses";
-import Footer from "./Components/Footer";
-import HEader from "./Components/HEader";
+import Footer from "./pages/Footer";
+import HEader from "./pages/HEader";
 
 function App() {
 
   return (
-    <>
+    <div className="bg-zinc-50 text-center text-surface/75 dark:bg-gradient-to-r from-cyan-200 to-blue-200 dark:text-black/75 lg:text-left">
     <HEader/>
     <Nav/>
      <Body/>
      {/* <Courses/> */}
      <Footer/>
-    </>
+    </div>
   )
 }
 
