@@ -6,7 +6,7 @@ const Result = () => {
         {/* Results Section */}
         <div className="container mx-auto " id="results">
         <h2 className=" text-3xl font-bold mb-8 flex justify-center border rounded-xl bg-blue-200 py-5">Our Results</h2>
-          <h2 className=" text-3xl font-semibold mb-8 flex justify-center border rounded-xl py-5 w-80 mx-auto">Academic Results</h2>
+          <h2 className=" text-3xl font-semibold mb-8 flex justify-center  rounded-xl py-5 w-80 mx-auto">Academic Results</h2>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-6 ">
       <ResultCard head="100% Placement" body="All our students get placed in top companies." img="/images/pic4.jpeg"/>
       <ResultCard head="Average Salary" body="Our students earn an average of $80,000 per year." img="/images/pic 5.jpeg"/>

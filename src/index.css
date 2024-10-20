@@ -6,6 +6,7 @@
 
 .homebg{
     display: flex;
+    /* justify-content: space-around; */
     background-image: url(/images/homeImage.jpg);
     background-repeat: no-repeat;
     /* background-position: center; */

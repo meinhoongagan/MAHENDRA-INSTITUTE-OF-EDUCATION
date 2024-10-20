@@ -39,7 +39,7 @@ const Hero = () => {
       return () => clearTimeout(timer);
     }, [displayedText, isDeleting, currentTextIndex, texts, typingSpeed, deletingSpeed, pauseTime]);
   
-    return <h1 className='text-white text-3xl font-bold'>We provide personalise <span className='text-blue-400'>{displayedText}</span></h1>;
+    return <h1 className='text-white text-3xl font-bold'>We provide personalise <br/> <span className='text-blue-400'>{displayedText}</span></h1>;
   };
   
   
@@ -54,12 +54,17 @@ const Hero = () => {
       </p>
     </div>
     <Typewriter 
-        texts={["learning !", "carrier guildence.", "doubt solving."]} 
+        texts={["learning environment !", "carrier guildence.", "doubt solving."]} 
         typingSpeed={100} 
         deletingSpeed={50} 
         pauseTime={1000} 
       />
-    </div></div>
+    </div>
+    {/* <div className='flex justify-center items-center'>
+      <img src="images/logo.png" alt="hero" className="w-full h-[80%]"/>
+       div added and background is removed and using logo instead
+    </div> */}
+    </div>
     </div>
   )
 }
