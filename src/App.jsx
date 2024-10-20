@@ -11,8 +11,8 @@ function App() {
     <HEader/>
     <Nav/>
      <Body/>
-     {/* <Courses/> */}
-     <Footer/>
+     
+    <Footer/>
     </div>
   )
 }
