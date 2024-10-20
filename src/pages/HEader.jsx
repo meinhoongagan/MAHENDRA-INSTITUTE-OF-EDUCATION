@@ -3,7 +3,7 @@ import React from 'react';
 
 function Header() {
   return (
-    <header className=" bg-blue-50 py-5 px-10">
+    <header className=" bg-blue-50 py-2 px-10">
       <div className=" items-center justify-between flex">
         <img className="h-20 max-md:" src="/images/logo.png" alt=""/>
         <h1 className='border text-2xl font-bold text-blue-500 rounded-lg py-2 px-1 bg-cyan-100 my-5 max-md:hidden  shadow-xl shadow-slate-600'>
