@@ -7,7 +7,7 @@ import Testimonial from "../components/Testimonial";
 import Testimonials from "../components/Testimonials";
 import Payment from "../components/Payment";
 import Contact from "../components/Contact";
-import Sapeciality from "../components/Sapeciality";
+import Speciality from "../components/Speciality";
 import FAQ from "../components/FAQ";
 
 function Body() {
@@ -16,7 +16,7 @@ function Body() {
 
     <>
       <Hero/>
-      <Sapeciality/>
+      <Speciality/>
       <Test/>
       <Result/>
       <Testimonials/>
