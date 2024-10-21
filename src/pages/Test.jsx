@@ -1,12 +1,18 @@
 import React from 'react'
-import TestCard from './TestCard'
+import TestCard from '../components/TestCard'
+import 'aos/dist/aos.css';  // Import AOS styles
+import AOS from 'aos';  // Import AOS library
+import {useEffect} from 'react'
 
 const Test = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });  // Initialize AOS with optional settings
+  }, []);
   return (
     <div className="mt-10">
   <div className="container mx-auto">
   <div className="text-center  bg-blue-200 "><h2 className=" text-3xl font-bold mb-8 flex justify-center py-5 w-80 mx-auto">Unit Test</h2>  </div>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20" data-aos="fade-up">
       
       <TestCard head="100% Pass Rate" img="./images/testpic1.jpg" body="All our students pass the unit tests with flying colors."/>
       <TestCard head="Comprehensive Coverage" img="./images/testpic2.jpg" body="Our unit tests cover all the key concepts and ingredients."/>

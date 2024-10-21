@@ -1,5 +1,5 @@
 import React from 'react';
-import SpecialityCard from './SpecialityCard';
+import SpecialityCard from '../components/SpecialityCard';
 
 const Speciality = () => {
   const specialties = [

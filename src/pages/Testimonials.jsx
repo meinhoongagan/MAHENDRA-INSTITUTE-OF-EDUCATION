@@ -1,8 +1,14 @@
 import React from 'react';
 import { useRef } from 'react';
-import TestimonialCard from './TestimonialCard';
+import TestimonialCard from '../components/TestimonialCard';
+import 'aos/dist/aos.css';  // Import AOS styles
+import AOS from 'aos';  // Import AOS library
+import {useEffect} from 'react'
 
 export default function Testimonials() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });  // Initialize AOS with optional settings
+  }, []);
   const scrollRef = useRef(null);
 
   const handleDragScroll = (e) => {
@@ -64,6 +70,7 @@ export default function Testimonials() {
         ref={scrollRef}
         className="max-w-8xl mx-auto p-6 flex space-x-6 overflow-x-scroll scrollbar-hide cursor-grab select-none lg:hidden"
         onMouseDown={handleDragScroll}
+        data-aos="zoom-in"
       >
         {testimonials.map((testimonial, index) => (
           <div className="min-w-[80vw] sm:min-w-[60vw] md:min-w-[40vw] max-w-[400px]">

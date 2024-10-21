@@ -1,8 +1,10 @@
 // FAQ.js
 import React from 'react';
-import FAQItem from './FAQItem';
+import FAQItem from '../components/FAQItem';
+
 
 function FAQ() {
+
   const faqData = [
     {
       question: "What is Career Counseling & Guidance?",
