@@ -1,14 +1,14 @@
 import React from "react";
 import Hero from "../components/Hero";
-import Course from "../components/Course";
+// import Course from "../components/Course";
 import Result from "../components/Result";
-import Test from "../components/Test";
-import Testimonial from "../components/Testimonial";
-import Testimonials from "../components/Testimonials";
-import Payment from "../components/Payment";
+import Test from "../pages/Test";
+// import Testimonial from "../components/Testimonial";
+import Testimonials from "../pages/Testimonials";
+// import Payment from "../components/Payment";
 import Contact from "../components/Contact";
-import Sapeciality from "../components/Sapeciality";
-import FAQ from "../components/FAQ";
+import Speciality from "../pages/Speciality";
+import FAQ from "../pages/FAQ";
 
 function Body() {
   
@@ -16,11 +16,12 @@ function Body() {
 
     <>
       <Hero/>
-      <Sapeciality/>
+      <Speciality/>
       <Test/>
       <Result/>
       <Testimonials/>
       <FAQ/>
+      <Contact/>
       {/* <Course/> */}
       {/* <Payment/> */}
       {/* <Contact/> */}
