@@ -49,7 +49,7 @@ const Hero = () => {
     <div className='homebg'>
     <div className='flex flex-col mt-28 ml-8 mb-8 gap-8'>
     <div>
-      <p className='text-white text-8xl font-semibold font-lilita'>
+      <p className='text-white text-8xl font-medium font-lilita mt-[85px]'>
       Mahendra <br/>Institute Of <br/>Technology
       </p>
     </div>
