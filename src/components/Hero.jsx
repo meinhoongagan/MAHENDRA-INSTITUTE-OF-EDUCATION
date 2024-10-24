@@ -61,7 +61,7 @@ const Hero = () => {
       <div className='container mx-auto px-4 text-center lg:text-left'>
         <div className='flex flex-col gap-6 sm:gap-8'>
           <div>
-            <p className='text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold font-lilita leading-tight'>
+            <p className='text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium font-lilita leading-tight'>
               Mahendra <br /> Institute Of <br /> Education
             </p>
           </div>
