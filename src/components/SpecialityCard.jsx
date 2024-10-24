@@ -20,9 +20,9 @@ const SpecialityCard = ({ image, title, description }) => {
       className="h-full w-full object-cover"
     />
   </div>
-  <div className="p-6 pl-8 flex flex-col justify-center flex-grow">  {/* Added flex-grow to evenly distribute space */}
-    <h3 className="text-4xl font-bold mb-4 line-clamp-2">{title}</h3> {/* line-clamp ensures heading doesn't stretch card */}
-    <p className="text-white mb-4 line-clamp-3">{description}</p>   {/* Limit description to 3 lines */}
+  <div className="p-6 pl-8 flex flex-col justify-center flex-grow">
+    <h3 className="text-4xl font-bold mb-4 ">{title}</h3> 
+    <p className="text-white mb-4 line-clamp-3">{description}</p>
     <a href="#" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 mt-auto">
       Learn More
     </a>
