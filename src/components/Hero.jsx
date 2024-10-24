@@ -46,11 +46,11 @@ const Hero = () => {
     <div className="container mx-auto">
     <div className='homebg'>
     <div className='flex flex-col mt-28 ml-8 mb-8 gap-8'>
-    <div>
+    
       <p className='text-white text-8xl font-semibold font-lilita'>
       Mahendra <br/>Institute Of <br/>Technology
       </p>
-    </div>
+    
     <Typewriter 
         texts={["learning environment !", "carrier guildence.", "doubt solving."]} 
         typingSpeed={100} 

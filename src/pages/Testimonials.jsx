@@ -48,7 +48,7 @@ export default function Testimonials() {
       image: '/images/pic9.jpeg',
       name: 'Balbir Kaur',
       role: 'Student',
-      text: '“Healthy social and emotional development.”',
+      text: '"This course has been a game-changer for me. The instructors are  knowledgeable and the curriculum is top-notch."',
     },
     {
       image: '/images/pic8.jpeg',
@@ -56,10 +56,16 @@ export default function Testimonials() {
       role: 'Student',
       text: '“At this School, our mission is to balance a rigorous comprehensive college preparatory curriculum with healthy social and emotional development.”',
     },
+    {
+      image: '/images/pic7.jpg',
+      name: 'Balbir Kaur',
+      role: 'Student',
+      text: ' "I highly recommend this course to anyone looking to advance their career. The hands-on projects were invaluable."',
+    },
   ];
 
   return (
-    <div className="bg-[#B1E8FD] py-8" id="testimonials">
+    <div className="bg-[#B1E8FD] " id="testimonials">
       <div className="text-center text-black">
         <h2 className="text-3xl font-bold mb-8 py-5 bg-blue-200 text-black">TESTIMONIALS</h2>
         <h3 className="text-3xl font-semibold mb-8">Explore the students' experience</h3>
