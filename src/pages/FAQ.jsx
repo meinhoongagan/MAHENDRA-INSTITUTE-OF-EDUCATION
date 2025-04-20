@@ -1,45 +1,43 @@
-// FAQ.js
-import React from 'react';
-import FAQItem from '../components/FAQItem';
+import FAQItem from "../components/FAQItem"
 
-
-function FAQ() {
-
-  const faqData = [
+const FAQSection = () => {
+  const faqs = [
     {
-      question: "What is Career Counseling & Guidance?",
-      answer: "Career Guidance is a comprehensive, right-based development approach that assists individuals in making informed educational and occupational choices, leading to their social, financial, and emotional well-being."
+      question: "How long does each course take to complete?",
+      answer: "Our courses are designed to be completed in 8-12 weeks, depending on your pace and prior experience. Each module includes approximately 5-10 hours of content including videos, readings, and hands-on exercises."
     },
     {
-      question: "Why is Career Counselling important?",
-      answer: "All of us are bound to get stuck at some point in our life. It is at such self-introspective times that we become more aware of ourselves and take actions accordingly. So, when it comes to deciding about our future, should we follow a trend or discover what works best for us?"
+      question: "Are there any prerequisites for enrolling?",
+      answer: "Most of our beginner courses don't require any prior knowledge. For intermediate and advanced courses, we recommend checking the specific prerequisites listed on each course page."
     },
     {
-      question: "How can Career Counseling help students?",
-      answer: "Career counseling helps students understand their strengths, skills, and areas of interest, enabling them to make more informed career decisions."
+      question: "Do you offer certificates upon completion?",
+      answer: "Yes! After successfully completing all required modules and assignments, you'll receive a digital certificate that you can share on platforms like LinkedIn or include in your resume."
     }
   ];
 
   return (
-    <div className="bg-[#B1E8FD] py-8 mt-10">
-      <h1 className="text-3xl font-bold mb-8 flex justify-center border rounded-xl bg-blue-200 py-5 md:text-4xl sm:text-2xl">
-        FAQ
-      </h1>
-      <div className="mx-4 sm:mx-8 md:mx-20 lg:mx-36">
-        <p className="text-2xl md:text-3xl font-bold">
-          FAQs: What students usually ask us?
-        </p>
-        <p className="text-lg md:text-xl mt-5 mb-5">
-          Career Counselling is a specialized service that needs multiple resources ranging from trained counsellors, to an updated database and psychometric tests. We combine this all and bundle it as a service for schools of repute eager to benefit their students.
-        </p>
-
-        {/* Map over the faqData array to render FAQItem components */}
-        {faqData.map((faq, index) => (
-          <FAQItem key={index} question={faq.question} answer={faq.answer} />
-        ))}
+    <div className="py-16 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold inline-block px-8 py-4 rounded-xl bg-gradient-to-r from-blue-400 to-cyan-300 text-white shadow-md">
+            Frequently Asked Questions
+          </h2>
+        </div>
+        
+        <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8">
+          {faqs.map((faq, index) => (
+            <FAQItem 
+              key={index} 
+              question={faq.question} 
+              answer={faq.answer} 
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
-}
+};
 
-export default FAQ;
+
+export default FAQSection
