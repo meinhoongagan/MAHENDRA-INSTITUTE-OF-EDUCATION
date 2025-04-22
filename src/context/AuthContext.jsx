@@ -1,5 +1,6 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import { API_ENDPOINTS } from '../config/apiConfig';
+import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext();
 
@@ -87,10 +88,29 @@ export const AuthProvider = ({ children }) => {
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
+// Custom hook for using auth context with navigation capability
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {
     throw new Error('useAuth must be used within an AuthProvider');
   }
   return context;
-}; 
+};
+
+// Protected route component to handle redirects
+export const RequireAuth = ({ children }) => {
+  const { user, loading } = useAuth();
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    if (!loading && !user) {
+      navigate('/login');
+    }
+  }, [user, loading, navigate]);
+  
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+  
+  return user ? children : null;
+};

@@ -127,7 +127,7 @@ const AdminTestResults = () => {
   if (!user || !isAdmin()) {
     return (
       <div className="py-16 bg-gray-50 text-center">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 mt-25">
           <h2 className="text-4xl font-bold inline-block px-8 py-4 rounded-xl bg-gradient-to-r from-blue-400 to-cyan-300 text-white shadow-md">
             Access Denied
           </h2>

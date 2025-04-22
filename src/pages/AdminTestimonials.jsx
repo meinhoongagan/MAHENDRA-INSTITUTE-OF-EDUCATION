@@ -66,7 +66,7 @@ const AdminTestimonials = () => {
   if (!user || user.role !== 'admin') {
     return (
       <div className="py-16 bg-gray-50 text-center">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 mt-25">
           <h2 className="text-4xl font-bold text-red-600">Access Denied</h2>
           <p className="mt-4 text-gray-600">You don't have permission to access this page.</p>
         </div>

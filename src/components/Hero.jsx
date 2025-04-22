@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { API_ENDPOINTS } from '../config/apiConfig';
+import { useNavigate } from 'react-router-dom';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 
 const Hero = () => {
-  const [academicResults, setAcademicResults] = useState([]);
-  const [testResults, setTestResults] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const Typewriter = ({ texts, typingSpeed = 100, deletingSpeed = 50, pauseTime = 1500 }) => {
     const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -57,40 +53,10 @@ const Hero = () => {
       duration: 1000,
       once: true
     });
-
-    fetchResults();
   }, []);
 
-  const fetchResults = async () => {
-    try {
-      const token = localStorage.getItem('token');
-      const [academicResponse, testResponse] = await Promise.all([
-        fetch(API_ENDPOINTS.academicResults.getAll, {
-          headers: {
-            'Authorization': `Bearer ${token}`
-          }
-        }),
-        fetch(API_ENDPOINTS.testResults.getAll, {
-          headers: {
-            'Authorization': `Bearer ${token}`
-          }
-        })
-      ]);
-
-      if (!academicResponse.ok || !testResponse.ok) {
-        throw new Error('Failed to fetch results');
-      }
-
-      const academicData = await academicResponse.json();
-      const testData = await testResponse.json();
-
-      setAcademicResults(academicData.slice(0, 3));
-      setTestResults(testData.slice(0, 3));
-      setLoading(false);
-    } catch (err) {
-      setError(err.message);
-      setLoading(false);
-    }
+  const handleExplore = (path) => {
+    navigate(path);
   };
 
   return (
@@ -146,10 +112,16 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 1.2 }}
             >
-              <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/50">
+              <button 
+                className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/50"
+                onClick={() => handleExplore('/courses')}
+              >
                 Explore Courses
               </button>
-              <button className="border-2 border-white hover:bg-white hover:text-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105">
+              <button 
+                className="border-2 border-white hover:bg-white hover:text-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105"
+                onClick={() => handleExplore('/contact')}
+              >
                 Contact Us
               </button>
             </motion.div>
@@ -177,87 +149,6 @@ const Hero = () => {
           </div>
           <p className="text-white text-sm mt-2 text-center">Scroll Down</p>
         </motion.div>
-      </div>
-
-      {/* Results Section */}
-      <div className="bg-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Academic Results */}
-            <div className="bg-gray-50 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Recent Academic Results</h3>
-              <div className="space-y-3">
-                {loading ? (
-                  <p className="text-gray-600">Loading results...</p>
-                ) : error ? (
-                  <p className="text-red-600">Error loading results</p>
-                ) : (
-                  academicResults.map((result, index) => (
-                    <div key={result._id} className="bg-white p-3 rounded-lg">
-                      <div className="flex justify-between items-center">
-                        <div>
-                          <p className="font-medium">{result.user}</p>
-                          <p className="text-sm text-gray-600">Class: {result.class}</p>
-                        </div>
-                        <div className="text-right">
-                          <p className="font-bold text-blue-600">{result.percentage}%</p>
-                          <p className="text-sm text-gray-600">
-                            {result.marksObtained}/{result.totalMarks}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  ))
-                )}
-              </div>
-              <div className="mt-4 text-center">
-                <Link
-                  to="/academic-results"
-                  className="text-blue-600 hover:text-blue-800 text-sm font-medium"
-                >
-                  Show More Academic Results →
-                </Link>
-              </div>
-            </div>
-
-            {/* Test Results */}
-            <div className="bg-gray-50 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Recent Test Results</h3>
-              <div className="space-y-3">
-                {loading ? (
-                  <p className="text-gray-600">Loading results...</p>
-                ) : error ? (
-                  <p className="text-red-600">Error loading results</p>
-                ) : (
-                  testResults.map((result, index) => (
-                    <div key={result._id} className="bg-white p-3 rounded-lg">
-                      <div className="flex justify-between items-center">
-                        <div>
-                          <p className="font-medium">{result.user}</p>
-                          <p className="text-sm text-gray-600">{result.testTitle}</p>
-                        </div>
-                        <div className="text-right">
-                          <p className="font-bold text-blue-600">{result.percentage}%</p>
-                          <p className="text-sm text-gray-600">
-                            {result.score}/{result.totalMarks}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  ))
-                )}
-              </div>
-              <div className="mt-4 text-center">
-                <Link
-                  to="/test-results"
-                  className="text-blue-600 hover:text-blue-800 text-sm font-medium"
-                >
-                  Show More Test Results →
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );

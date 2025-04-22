@@ -131,12 +131,6 @@ const Course = () => {
             </div>
           ))}
         </div>
-        
-        <div className="mt-16 text-center">
-          <a href="#" className="inline-block border-2 border-blue-500 text-blue-500 px-8 py-3 rounded-lg font-medium hover:bg-blue-500 hover:text-white transition-colors">
-            View All Courses
-          </a>
-        </div>
       </div>
     </div>
   )

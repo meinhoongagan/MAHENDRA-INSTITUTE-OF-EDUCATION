@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FaGraduationCap, FaBars, FaTimes } from 'react-icons/fa';
 import { useAuth } from '../context/AuthContext';
 import { LogOut, User, BookOpen, Star, MessageSquare, Phone, Settings, FileText } from 'lucide-react';
+import NotificationBell from '../components/NotificationBell';
 
 const Nav = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,7 +31,7 @@ const Nav = () => {
   const handleLogout = async () => {
     try {
       await logout();
-      navigate('/');
+      navigate('/login'); // Add navigation to login page after successful logout
     } catch (error) {
       console.error('Logout error:', error);
     }
@@ -67,30 +68,40 @@ const Nav = () => {
             ))}
             {user?.role === 'admin' && (
               <div className="relative group">
-                <button className="flex items-center text-gray-300 hover:text-white">
+                <button className="flex items-center text-gray-800 font-medium hover:text-blue-600">
                   Admin
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 hidden group-hover:block">
-                  <Link to="/admin/courses" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                <div className="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg py-2 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50">
+                  <Link to="/admin/users" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    Manage Users
+                  </Link>
+                  <Link to="/admin/courses" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                     Manage Courses
                   </Link>
-                  <Link to="/admin/testimonials" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                  <Link to="/admin/testimonials" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                     Manage Testimonials
                   </Link>
-                  <Link to="/admin/test-results" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                  <Link to="/admin/results" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                     Manage Test Results
                   </Link>
-                  <Link to="/admin/academic-results" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                  <Link to="/admin/academic-results" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                     Manage Academic Results
+                  </Link>
+                  <Link to="/admin/notifications" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    Manage Notifications
                   </Link>
                 </div>
               </div>
             )}
-            {user ? (
+
+            {user && (
               <div className="flex items-center space-x-4">
+                {/* Notification Bell */}
+                <NotificationBell />
+                
                 <span className="text-gray-800">{user.name}</span>
                 <button
                   onClick={handleLogout}
@@ -99,7 +110,9 @@ const Nav = () => {
                   Logout
                 </button>
               </div>
-            ) : (
+            )}
+
+            {!user && (
               <Link 
                 to="/login"
                 className={`px-6 py-2 rounded-full font-semibold transition duration-300 ${
@@ -114,15 +127,18 @@ const Nav = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
-            className="lg:hidden text-2xl focus:outline-none"
-            onClick={toggleMobileMenu}
-          >
-            {isMobileMenuOpen ? 
-              <FaTimes className={isScrolled ? 'text-gray-800' : 'text-white'} /> : 
-              <FaBars className={isScrolled ? 'text-gray-800' : 'text-white'} />
-            }
-          </button>
+          <div className="lg:hidden flex items-center">
+            {user && <NotificationBell />}
+            <button 
+              className="ml-2 text-2xl focus:outline-none"
+              onClick={toggleMobileMenu}
+            >
+              {isMobileMenuOpen ? 
+                <FaTimes className={isScrolled ? 'text-gray-800' : 'text-white'} /> : 
+                <FaBars className={isScrolled ? 'text-gray-800' : 'text-white'} />
+              }
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -141,25 +157,50 @@ const Nav = () => {
             ))}
             {user?.role === 'admin' && (
               <div className="border-b border-gray-200">
-                <div className="relative group">
-                  <button className="flex items-center text-gray-300 hover:text-white">
-                    Admin
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 hidden group-hover:block">
-                    <Link to="/admin/courses" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                <div className="py-3 px-2">
+                  <p className={`font-medium ${isScrolled ? 'text-gray-800' : 'text-white'}`}>Admin</p>
+                  <div className="ml-4 mt-2 space-y-2">
+                    <Link 
+                      to="/admin/users" 
+                      className="block text-gray-600 hover:text-blue-600"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Manage Users
+                    </Link>
+                    <Link 
+                      to="/admin/courses" 
+                      className="block text-gray-600 hover:text-blue-600"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
                       Manage Courses
                     </Link>
-                    <Link to="/admin/testimonials" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                    <Link 
+                      to="/admin/testimonials" 
+                      className="block text-gray-600 hover:text-blue-600"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
                       Manage Testimonials
                     </Link>
-                    <Link to="/admin/test-results" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                    <Link 
+                      to="/admin/results" 
+                      className="block text-gray-600 hover:text-blue-600"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
                       Manage Test Results
                     </Link>
-                    <Link to="/admin/academic-results" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                    <Link 
+                      to="/admin/academic-results" 
+                      className="block text-gray-600 hover:text-blue-600"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
                       Manage Academic Results
+                    </Link>
+                    <Link 
+                      to="/admin/notifications" 
+                      className="block text-gray-600 hover:text-blue-600"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Manage Notifications
                     </Link>
                   </div>
                 </div>
